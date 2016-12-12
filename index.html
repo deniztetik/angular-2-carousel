@@ -5,6 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Carousel</title>
   <style type="text/css">
+    .active {
+      height: 130px;
+    }
+    .active li {
+      position: absolute;
+      top: 200px;
+    }
+    .active li.current {
+      top: 30px;
+    }
     .carouselbox {
       font-family: helvetica, sans-serif;
       font-size: 14px;
@@ -30,10 +40,10 @@
   </style>
 </head>
 <body>
-  <div class="carouselbox">
+  <div class="carouselbox active">
     <ol class="content">
       <li>1</li>
-      <li>2</li>
+      <li class="current">2</li>
       <li>3</li>
       <li>4</li>
     </ol>
