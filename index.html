@@ -16,10 +16,14 @@
      overflow: hidden;
    }
    .content {
+     justify-content: center;
+     align-items: center;
+     overflow: hidden;
      margin: 0;
      padding: 0;
    }
    .content li {
+     height: 100%;
      font-size: 150px;
      margin: 0;
      padding: 0;
@@ -28,15 +32,32 @@
      text-align: center;
      z-index: 2;
    }
+   #img1 {
+     background-image: url('images/img1.jpg');
+   }
+   #img2 {
+     background-image: url('images/img2.jpg');
+   }
+   #img3 {
+     background-image: url('images/img3.jpg');
+   }
+   #img4 {
+     background-image: url('images/img4.jpg');
+   }
+   .content li {
+     background-size: cover;
+     background-repeat: no-repeat;
+     background-position: center center;
+   }
    .active {
-     height: 200px;
+     height: 400px;
    }
    .active li {
      position: absolute;
-     top: 200px;
+     top: 600px;
    }
    .active li.current {
-     top: 30px;
+     top: 0;
    }
    .buttons {
      display: none;
@@ -64,19 +85,19 @@
 </head>
 <body>
   <div class="carouselbox">
-    <div class="buttons">
+    <!-- <div class="buttons">
       <button class="prev">
       ◀  <span class="offscreen">Previous</span>
       </button>
       <button class="next">
         <span class="offscreen">Next</span> ▶
       </button>
-    </div>
+    </div> -->
     <ol class="content">
-      <li>1</li>
-      <li>2</li>
-      <li>3</li>
-      <li>4</li>
+      <li id='img1'></li>
+      <li id='img2'></li>
+      <li id='img3'></li>
+      <li id='img4'></li>
     </ol>
   </div>
   <script>
@@ -101,16 +122,16 @@
       current = items[counter]
       current.classList.add('current')
     }
-    next.addEventListener('click', function(ev) {
-      navigate(1)
-    })
-    prev.addEventListener('click', function(ev) {
-      navigate(-1)
-    })
+    // next.addEventListener('click', function(ev) {
+    //   navigate(1)
+    // })
+    // prev.addEventListener('click', function(ev) {
+    //   navigate(-1)
+    // })
     navigate(0)
     setInterval(function() {
       navigate(1)
-    }, 2500)
+    }, 4000)
   })();
   </script>
 </body>
